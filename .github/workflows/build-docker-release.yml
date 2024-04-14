@@ -3,14 +3,14 @@ name: build
 on:
   push:
     branches:
-      - main
+      - master
     tags-ignore:
       - v*
   pull_request:
       branches:
-        - main
+        - master
   schedule:
-    - cron: "0 27 * * 1"
+    - cron: "0 0 * * 1"
 
 jobs:
   build:
