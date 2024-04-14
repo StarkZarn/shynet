@@ -41,6 +41,5 @@ jobs:
           context: .
           tags: ghcr.io/starkzarn/shynet:latest
           push: true
-          context: .
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64          
