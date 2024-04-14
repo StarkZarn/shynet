@@ -28,8 +28,10 @@ jobs:
         uses: abatilo/actions-poetry@v3.0.0
         with:
           poetry-version: 1.8.2
-      - name: Preinstall dependencies (temporary)
-        run: poetry run pip install "Cython<3.0" "pyyaml==5.4.1" "wheel" --no-build-isolation
+      - name: preinstall wheel
+        run: poetry run pip install "wheel" --no-build-isolation
+      - name: Preinstall dependencies (temporary )
+        run: poetry run pip install "Cython<3.0" "pyyaml==5.4.1" --no-build-isolation
       - name: Install dependencies 
         run: poetry install
       - name: Django Testing project
