@@ -5,13 +5,9 @@
 //
 // This script only sends the current URL, the referrer URL, and the page load time. That's it!
 
-{% if dnt %}
+
 var Shynet = {
-  dnt: true
-};
-{% else %}
-var Shynet = {
-  dnt: false,
+
   idempotency: null,
   heartbeatTaskId: null,
   skipHeartbeat: false,
@@ -29,10 +25,10 @@ var Shynet = {
         true
       );
       xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onload = function () { 
+      xhr.onload = function () {
         Shynet.skipHeartbeat = false;
       };
-      xhr.onerror = function () { 
+      xhr.onerror = function () {
         Shynet.skipHeartbeat = false;
       };
       xhr.send(
@@ -45,7 +41,7 @@ var Shynet = {
             window.performance.timing.navigationStart,
         })
       );
-    } catch (e) {}
+    } catch (e) { }
   },
   newPageLoad: function () {
     if (Shynet.heartbeatTaskId != null) {
@@ -59,7 +55,6 @@ var Shynet = {
 };
 
 window.addEventListener("load", Shynet.newPageLoad);
-{% endif %}
 
 
 {% if script_inject %}
@@ -70,3 +65,4 @@ window.addEventListener("load", Shynet.newPageLoad);
 {{script_inject|safe}}
 // -- END --
 {% endif %}
+

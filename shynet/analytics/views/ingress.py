@@ -129,9 +129,7 @@ class ScriptView(ValidateServiceOriginsMixin, View):
             )
         )
         heartbeat_frequency = settings.SCRIPT_HEARTBEAT_FREQUENCY
-        dnt = self.request.META.get("HTTP_DNT", "0").strip() == "1"
-        service_uuid = self.kwargs.get("service_uuid")
-        service = Service.objects.get(pk=service_uuid, status=Service.ACTIVE)
+
         return render(
             self.request,
             "analytics/scripts/page.js",
@@ -141,7 +139,7 @@ class ScriptView(ValidateServiceOriginsMixin, View):
                     "protocol": protocol,
                     "heartbeat_frequency": heartbeat_frequency,
                     "script_inject": self.get_script_inject(),
-                    "dnt": dnt and service.respect_dnt,
+
                 }
             ),
             content_type="application/javascript",
