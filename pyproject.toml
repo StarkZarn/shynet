@@ -30,7 +30,7 @@ django-cors-headers = "^3.11.0"
 packaging = "^24.0"
 
 [tool.poetry.dev-dependencies]
-pytest-sugar = "^0.9.4"
+pytest-sugar = "^1.0.0"
 factory-boy = "^3.3.0"
 pytest-django = "^4.4.0"
 django-coverage-plugin = "^2.0.0"
