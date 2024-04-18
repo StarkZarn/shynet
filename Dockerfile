@@ -40,12 +40,12 @@ COPY package.json package-lock.json ../
 # Django expects node_modules to be in its parent directory.
 
 # Install more dependencies and cleanup build dependencies afterwards
-RUN apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev libressl-dev libffi-dev && \
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev libffi-dev && \
 	npm i -P --prefix .. && \
-	pip install poetry==1.2.2 && \
+	pip install poetry==1.8.2 && \
 	poetry config virtualenvs.create false && \
-	poetry run pip install "Cython<3.0" "pyyaml==5.4.1" --no-build-isolation && \
-	poetry install --no-dev --no-interaction --no-ansi && \
+	poetry run pip install "pyyaml==6.0.1" && \
+	poetry install --only main --no-interaction --no-ansi && \
 	apk --purge del .build-deps
 
 # Setup user group
