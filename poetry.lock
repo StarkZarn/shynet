@@ -1490,13 +1490,13 @@ cli = ["click (>=5.0)"]
 
 [[package]]
 name = "python-ipware"
-version = "2.0.4"
+version = "2.0.5"
 description = "A Python package to retrieve user's IP address"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "python_ipware-2.0.4-py3-none-any.whl", hash = "sha256:95f96404e27c41ca908e2dfa62dd34fa530ae3d15f20b276ec9d255f3c9aaf86"},
-    {file = "python_ipware-2.0.4.tar.gz", hash = "sha256:21e14b644ea4b2bafaae812b082bfd0b73c3557da253ac7fee8367b620652c0d"},
+    {file = "python_ipware-2.0.5-py3-none-any.whl", hash = "sha256:f210e3c90485985827d7894a354f6d0bf53a235d131cec3337b74286c3edf830"},
+    {file = "python_ipware-2.0.5.tar.gz", hash = "sha256:a2b9952ab267dff9c271683177131e75a7c161c2fc0c778673c8805929741741"},
 ]
 
 [package.extras]
