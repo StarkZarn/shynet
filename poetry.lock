@@ -1364,12 +1364,13 @@ files = [
 
 [[package]]
 name = "pycountry"
-version = "20.7.3"
+version = "23.12.11"
 description = "ISO country, subdivision, language, currency and script definitions and their translations"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
 files = [
-    {file = "pycountry-20.7.3.tar.gz", hash = "sha256:81084a53d3454344c0292deebc20fcd0a1488c136d4900312cbd465cf552cb42"},
+    {file = "pycountry-23.12.11-py3-none-any.whl", hash = "sha256:2ff91cff4f40ff61086e773d61e72005fe95de4a57bfc765509db05695dc50ab"},
+    {file = "pycountry-23.12.11.tar.gz", hash = "sha256:00569d82eaefbc6a490a311bfa84a9c571cff9ddbf8b0a4f4e7b4f868b4ad925"},
 ]
 
 [[package]]
@@ -1939,4 +1940,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "557711ff8fc0c0805db30cf6a461b2071bb73d2fcfbdc8efa1373ad0f9d8905b"
+content-hash = "ded1e294564338a37bcc6ed486ebcce93819a07b159c990483adc4d7d6640e7c"
