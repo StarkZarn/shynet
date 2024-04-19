@@ -664,14 +664,17 @@ test = ["celery", "pytest", "pytest-cov", "pytest-django", "redis"]
 
 [[package]]
 name = "django-ipware"
-version = "4.0.2"
+version = "6.0.5"
 description = "A Django application to retrieve user's IP address"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+python-versions = ">=3.8"
 files = [
-    {file = "django-ipware-4.0.2.tar.gz", hash = "sha256:602a58325a4808bd19197fef2676a0b2da2df40d0ecf21be414b2ff48c72ad05"},
-    {file = "django_ipware-4.0.2-py2.py3-none-any.whl", hash = "sha256:878dbb06a87e25550798e9ef3204ed70a200dd8b15e47dcef848cf08244f04c9"},
+    {file = "django-ipware-6.0.5.tar.gz", hash = "sha256:b39e27403287d6beb0513e694024017dba58d129fd410a1014ac8a1584e73fce"},
+    {file = "django_ipware-6.0.5-py2.py3-none-any.whl", hash = "sha256:a4b73de9a58af9aaa08710da689fb87e39ec470f8df6dc7ee9f8e2d3e0cdef6a"},
 ]
+
+[package.dependencies]
+python-ipware = ">=2.0.3"
 
 [[package]]
 name = "django-npm"
@@ -1396,6 +1399,20 @@ files = [
 cli = ["click (>=5.0)"]
 
 [[package]]
+name = "python-ipware"
+version = "2.0.4"
+description = "A Python package to retrieve user's IP address"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "python_ipware-2.0.4-py3-none-any.whl", hash = "sha256:95f96404e27c41ca908e2dfa62dd34fa530ae3d15f20b276ec9d255f3c9aaf86"},
+    {file = "python_ipware-2.0.4.tar.gz", hash = "sha256:21e14b644ea4b2bafaae812b082bfd0b73c3557da253ac7fee8367b620652c0d"},
+]
+
+[package.extras]
+dev = ["coverage[toml]", "coveralls (>=3.3,<4.0)", "ruff", "twine"]
+
+[[package]]
 name = "python3-openid"
 version = "3.2.0"
 description = "OpenID support for modern servers and consumers."
@@ -1823,4 +1840,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "c10890db8390686b5072e25aba4abc502327ddd768b52d50254d19c953d92f01"
+content-hash = "7f92e6b1489acd69be4569d5722f839fdc73456db3834acb94c2131cbc136127"
