@@ -25,7 +25,7 @@ html2text = "^2024.0.0"
 django-health-check = "^3.16.4"
 django-npm = "^1.0.0"
 python-dotenv = "^0.21.0"
-django-debug-toolbar = "^3.2.1"
+django-debug-toolbar = "^4.0.0"
 django-cors-headers = "^4.0.0"
 packaging = "^24.0"
 
