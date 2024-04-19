@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "debug_toolbar",
     "corsheaders",
+    "django_minify_html",
 ]
 
 MIDDLEWARE = [
@@ -80,6 +81,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "django_minify_html.middleware.MinifyHtmlMiddleware",
 ]
 
 ROOT_URLCONF = "shynet.urls"
