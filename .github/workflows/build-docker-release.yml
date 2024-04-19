@@ -6,11 +6,11 @@ on:
       - master
     tags-ignore:
       - v*
-  pull_request:
-      branches:
-        - master
-  schedule:
-    - cron: "0 0 * * 1"
+  #pull_request:
+      #branches:
+        #- master
+  #schedule:
+    #- cron: "0 0 * * 1"
 
 jobs:
   build:
