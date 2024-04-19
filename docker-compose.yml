@@ -1,8 +1,7 @@
-version: '3'
 services:
   shynet:
     container_name: shynet_main
-    image: milesmcc/shynet:latest
+    image: ghcr.io/starkzarn/shynet:latest
     restart: unless-stopped
     expose:
       - 8080
