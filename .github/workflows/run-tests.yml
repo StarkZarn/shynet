@@ -17,7 +17,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.11]
+        python-version: [3.12]
 
     steps:
       - uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
       - name: preinstall wheel
         run: poetry run pip install "wheel" --no-build-isolation
       - name: Preinstall dependencies (temporary )
-        run: poetry run pip install "Cython<3.0" "pyyaml==5.4.1" --no-build-isolation
+        run: poetry run pip install "pyyaml~=6.0.1" --no-build-isolation
       - name: Install dependencies 
         run: poetry install
       - name: Django Testing project
