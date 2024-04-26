@@ -741,23 +741,24 @@ redis = "<4.0"
 
 [[package]]
 name = "django-stubs"
-version = "1.9.0"
+version = "4.2.7"
 description = "Mypy stubs for Django"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 files = [
-    {file = "django-stubs-1.9.0.tar.gz", hash = "sha256:664843091636a917faf5256d028476559dc360fdef9050b6df87ab61b21607bf"},
-    {file = "django_stubs-1.9.0-py3-none-any.whl", hash = "sha256:59c9f81af64d214b1954eaf90f037778c8d2b9c2de946a3cda177fefcf588fbd"},
+    {file = "django-stubs-4.2.7.tar.gz", hash = "sha256:8ccd2ff4ee5adf22b9e3b7b1a516d2e1c2191e9d94e672c35cc2bc3dd61e0f6b"},
+    {file = "django_stubs-4.2.7-py3-none-any.whl", hash = "sha256:4cf4de258fa71adc6f2799e983091b9d46cfc67c6eebc68fe111218c9a62b3b8"},
 ]
 
 [package.dependencies]
 django = "*"
-django-stubs-ext = ">=0.3.0"
-mypy = ">=0.910"
-toml = "*"
+django-stubs-ext = ">=4.2.7"
 types-pytz = "*"
 types-PyYAML = "*"
 typing-extensions = "*"
+
+[package.extras]
+compatible-mypy = ["mypy (>=1.7.0,<1.8.0)"]
 
 [[package]]
 name = "django-stubs-ext"
@@ -1940,4 +1941,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "22268a307fd965feeb9e24733fdd2a228c4b77f0a5c319892a39d179778c5a4d"
+content-hash = "3c5c4d069715f10b7d974cb0fe60b3f5a1e9145ada2734ecc5af96a00818c25e"
