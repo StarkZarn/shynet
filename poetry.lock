@@ -1636,13 +1636,13 @@ rsa = ["oauthlib[signedtoken] (>=3.0.0)"]
 
 [[package]]
 name = "rules"
-version = "3.3"
+version = "3.4"
 description = "Awesome Django authorization, without the database"
 optional = false
 python-versions = "*"
 files = [
-    {file = "rules-3.3-py2.py3-none-any.whl", hash = "sha256:12c8bbab5f54560e68528fcca7abc0e162c35ac882e3cc0daed40ac49c963070"},
-    {file = "rules-3.3.tar.gz", hash = "sha256:bf7bea8b724b73c36a622714c1b3557620c187a2ee05321a2ac8ab7472dc4464"},
+    {file = "rules-3.4-py2.py3-none-any.whl", hash = "sha256:e906114d9b3cce73871213c6311b94cb26a5bc2c3b00aa2f13d3633a65447817"},
+    {file = "rules-3.4.tar.gz", hash = "sha256:c4702c1d60ca43e97d4dfced31e98274c652dea3c461105d8df6186d663e3212"},
 ]
 
 [[package]]
