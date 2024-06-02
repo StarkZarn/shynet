@@ -321,7 +321,10 @@ NPM_FILE_PATTERNS = {
     ],
     "turbolinks": [os.path.join("dist", "turbolinks.js")],
     "stimulus": [os.path.join("dist", "stimulus.umd.js")],
-    "inter-ui": [os.path.join("inter-ui", "web", "*"), os.path.join("inter-ui", "inter.css")],
+    "inter-ui": [
+        os.path.join("inter-ui", "inter.css"),
+        os.path.join("inter-ui", "web", "*"),
+    ],
     "@fortawesome": [os.path.join("fontawesome-free", "js", "all.min.js")],
     "datamaps": [os.path.join("dist", "datamaps.world.min.js")],
     "d3": ["d3.min.js"],
