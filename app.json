@@ -9,9 +9,9 @@
     "privacy",
     "friendly"
   ],
-  "website": "https://github.com/milesmcc/shynet",
-  "repository": "https://github.com/milesmcc/shynet",
-  "logo": "https://github.com/milesmcc/shynet/raw/master/images/slogo.png",
+  "website": "https://github.com/starkzarn/shynet",
+  "repository": "https://github.com/starkzarn/shynet",
+  "logo": "https://github.com/starkzarn/shynet/raw/master/images/slogo.png",
   "success_url": "/",
   "stack": "container",
   "addons": [

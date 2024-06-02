@@ -77,7 +77,7 @@ Your site should now be accessible at `http://hostname:port`. Now you can follow
 
 You may wish to deploy Shynet on Heroku. Note that Heroku's free offerings (namely the free Postgres addon) are unlikely to support running any Shynet instance that records more than a few hundred requests per day &mdash; the database will quickly fill up. In most cases, the more cost-effective option for running Shynet is renting a VPS from a full cloud service provider. However, if you're sure Heroku is the right option for you, or you just want to try Shynet out, you can use the Quick Deploy button then follow the steps below. 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/milesmcc/shynet/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/starkzarn/shynet/tree/master)
 
 Once you deploy, you'll need to setup an admin user and whitelabel before you can use Shynet. Do that with the following commands:
 
@@ -234,7 +234,7 @@ Example in cURL:
 
 ## Troubleshooting
 
-Here are solutions for some common issues. If your situation isn't described here or the solution didn't work, feel free to [create an issue](https://github.com/milesmcc/shynet/issues/new) (but be sure to check for duplicate issues first).
+Here are solutions for some common issues. If your situation isn't described here or the solution didn't work, feel free to [create an issue](https://github.com/starkzarn/shynet/issues/new) (but be sure to check for duplicate issues first).
 
 #### The admin panel works, but no page views are showing up!
 

@@ -1,7 +1,7 @@
 // This is a lightweight and privacy-friendly analytics script from Shynet, a self-hosted
 // analytics tool. To give you full visibility into how your data is being monitored, this
 // file is intentionally not minified or obfuscated. To learn more about Shynet (and to view
-// its source code), visit <https://github.com/milesmcc/shynet>.
+// its source code), visit <https://github.com/starkzarn/shynet>.
 //
 // This script only sends the current URL, the referrer URL, and the page load time. That's it!
 

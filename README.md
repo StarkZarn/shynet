@@ -103,11 +103,11 @@ You can find instructions on getting started and usage in the [Usage Guide](GUID
 
 ## Troubleshooting
 
-Having trouble with Shynet? Check out the [troubleshooting guide](GUIDE.md#troubleshooting), or [create an issue](https://github.com/milesmcc/shynet/issues/new) if you think you found a bug in Shynet itself (or have a feature suggestion).
+Having trouble with Shynet? Check out the [troubleshooting guide](GUIDE.md#troubleshooting), or [create an issue](https://github.com/starkzarn/shynet/issues/new) if you think you found a bug in Shynet itself (or have a feature suggestion).
 
 ## Roadmap
 
-To see the upcoming planned features, check out the repository's [roadmap project](https://github.com/milesmcc/shynet/projects/1). Upcoming features include data aggregation through rollups, anomaly detection, detailed data exports, two-factor authentication, and a data deletion tool.
+To see the upcoming planned features, check out the repository's [roadmap project](https://github.com/starkzarn/shynet/projects/1). Upcoming features include data aggregation through rollups, anomaly detection, detailed data exports, two-factor authentication, and a data deletion tool.
 
 ## In the Wild
 
@@ -115,7 +115,7 @@ These sites use Shynet to monitor usage without violating visitors' privacy: [Po
 
 ## Contributing
 
-Are you interested in contributing to Shynet? Just send a pull request! Maybe once the project matures there will be more detailed contribution guidelines, but for now just send the code this way and we'll make sure it meets our standards together. Just know that by contributing, you agree to share all of your contributions under the same license as the project (see [LICENSE](LICENSE)). And always be sure to follow the [Code of Conduct](https://github.com/milesmcc/shynet/blob/master/CODE_OF_CONDUCT.md).
+Are you interested in contributing to Shynet? Just send a pull request! Maybe once the project matures there will be more detailed contribution guidelines, but for now just send the code this way and we'll make sure it meets our standards together. Just know that by contributing, you agree to share all of your contributions under the same license as the project (see [LICENSE](LICENSE)). And always be sure to follow the [Code of Conduct](https://github.com/starkzarn/shynet/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 

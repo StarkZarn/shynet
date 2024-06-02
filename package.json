@@ -3,19 +3,19 @@
   "description": "Modern, privacy-friendly, and cookie-free web analytics.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/milesmcc/shynet.git"
+    "url": "git+https://github.com/starkzarn/shynet.git"
   },
   "keywords": [
     "privacy",
     "analytics",
     "self-host"
   ],
-  "author": "R. Miles McCain <shynet@sendmiles.email>",
+  "author": "StarkZarn",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/milesmcc/shynet/issues"
+    "url": "https://github.com/starkzarn/shynet/issues"
   },
-  "homepage": "https://github.com/milesmcc/shynet#readme",
+  "homepage": "https://github.com/starkzarn/shynet#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.0.0",
     "a17t": "^0.10.1",
