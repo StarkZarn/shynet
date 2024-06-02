@@ -615,33 +615,36 @@ redis = "<4.0"
 
 [[package]]
 name = "django-stubs"
-version = "1.9.0"
+version = "5.0.2"
 description = "Mypy stubs for Django"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 files = [
-    {file = "django-stubs-1.9.0.tar.gz", hash = "sha256:664843091636a917faf5256d028476559dc360fdef9050b6df87ab61b21607bf"},
-    {file = "django_stubs-1.9.0-py3-none-any.whl", hash = "sha256:59c9f81af64d214b1954eaf90f037778c8d2b9c2de946a3cda177fefcf588fbd"},
+    {file = "django_stubs-5.0.2-py3-none-any.whl", hash = "sha256:cb0c506cb5c54c64612e4a2ee8d6b913c6178560ec168009fe847c09747c304b"},
+    {file = "django_stubs-5.0.2.tar.gz", hash = "sha256:236bc5606e5607cb968f92b648471f9edaa461a774bc013bf9e6bff8730f6bdf"},
 ]
 
 [package.dependencies]
+asgiref = "*"
 django = "*"
-django-stubs-ext = ">=0.3.0"
-mypy = ">=0.910"
-toml = "*"
-types-pytz = "*"
+django-stubs-ext = ">=5.0.2"
 types-PyYAML = "*"
-typing-extensions = "*"
+typing-extensions = ">=4.11.0"
+
+[package.extras]
+compatible-mypy = ["mypy (>=1.10.0,<1.11.0)"]
+oracle = ["oracledb"]
+redis = ["redis"]
 
 [[package]]
 name = "django-stubs-ext"
-version = "4.2.7"
+version = "5.0.2"
 description = "Monkey-patching and extensions for django-stubs"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "django-stubs-ext-4.2.7.tar.gz", hash = "sha256:519342ac0849cda1559746c9a563f03ff99f636b0ebe7c14b75e816a00dfddc3"},
-    {file = "django_stubs_ext-4.2.7-py3-none-any.whl", hash = "sha256:45a5d102417a412e3606e3c358adb4744988a92b7b58ccf3fd64bddd5d04d14c"},
+    {file = "django_stubs_ext-5.0.2-py3-none-any.whl", hash = "sha256:8d8efec5a86241266bec94a528fe21258ad90d78c67307f3ae5f36e81de97f12"},
+    {file = "django_stubs_ext-5.0.2.tar.gz", hash = "sha256:409c62585d7f996cef5c760e6e27ea3ff29f961c943747e67519c837422cad32"},
 ]
 
 [package.dependencies]
@@ -1504,17 +1507,6 @@ files = [
 ]
 
 [[package]]
-name = "types-pytz"
-version = "2024.1.0.20240417"
-description = "Typing stubs for pytz"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "types-pytz-2024.1.0.20240417.tar.gz", hash = "sha256:6810c8a1f68f21fdf0f4f374a432487c77645a0ac0b31de4bf4690cf21ad3981"},
-    {file = "types_pytz-2024.1.0.20240417-py3-none-any.whl", hash = "sha256:8335d443310e2db7b74e007414e74c4f53b67452c0cb0d228ca359ccfba59659"},
-]
-
-[[package]]
 name = "types-pyyaml"
 version = "6.0.12.20240311"
 description = "Typing stubs for PyYAML"
@@ -1731,4 +1723,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "39ac3b8c0c2c20211d2fafd855951fca97ae1b06ed3d839be1a634ea35f731ac"
+content-hash = "43d21917966f43cd2cd89040fd0e57f6e242c0406c5c5a0eb5dc28fb64bcaca0"
