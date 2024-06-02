@@ -325,8 +325,8 @@ NPM_FILE_PATTERNS = {
     "datamaps": [os.path.join("dist", "datamaps.world.min.js")],
     "d3": ["d3.min.js"],
     "topojson": [os.path.join("build", "topojson.min.js")],
-    "flag-icon-css": [
-        os.path.join("css", "flag-icon.min.css"),
+    "flag-icons": [
+        os.path.join("css", "flag-icons.min.css"),
         os.path.join("flags", "*"),
     ],
 }
