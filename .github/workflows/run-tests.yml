@@ -35,6 +35,8 @@ jobs:
       - name: Install dependencies 
         run: poetry install
       - name: Django Testing project
+        env: 
+          DJANGO_SETTINGS_MODULES: shynet.test_settings
         run: |
           cp TEMPLATE.env .env
           DJANGO_SETTINGS_MODULES=shynet.test_settings poetry run ./shynet/manage.py test
