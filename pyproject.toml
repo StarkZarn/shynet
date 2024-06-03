@@ -16,7 +16,6 @@ PyYAML = "6.0.1"
 user-agents = "^2.2.0"
 rules = "^3.0"
 gunicorn = "^22.0.0"
-psycopg2-binary = "^2.9.2"
 redis = "^5.0.0"
 pycountry = "^24.0.0"
 html2text = "^2024.0.0"
@@ -27,6 +26,7 @@ django-debug-toolbar = "^4.0.0"
 django-cors-headers = "^4.0.0"
 packaging = "^24.0"
 django-allauth = "^0.63.3"
+psycopg = {extras = ["binary"], version = "^3.1.19"}
 
 [tool.poetry.dev-dependencies]
 pytest-sugar = "^1.0.0"
