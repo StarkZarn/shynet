@@ -32,7 +32,7 @@ Before continuing, please be sure to have the latest version of Docker installed
 
 ### Basic Installation
 
-1. Pull the latest version of Shynet using `docker pull milesmcc/shynet:latest`. If you don't have Docker installed, [install it](https://docs.docker.com/get-docker/).
+1. Pull the latest version of Shynet using `docker pull ghcr.io/starkzarn/shynet:latest`. If you don't have Docker installed, [install it](https://docs.docker.com/get-docker/).
 
 2. For database you can use either PostgreSQL or SQLite:
 
@@ -42,13 +42,13 @@ Before continuing, please be sure to have the latest version of Docker installed
 
 3. Configure an environment file for Shynet, using [this file](/TEMPLATE.env) as a template. (This file is typically named `.env`.) Make sure you set the database settings, or Shynet won't be able to run. Also consider setting `ALLOWED_HOSTS` inside the environment file to your deployment's domain for better security.
 
-4. Launch the Shynet server for the first time by running `docker run --env-file=<your env file> milesmcc/shynet:latest`. Provided you're using the default environment information (i.e., `PERFORM_CHECKS_AND_SETUP` is `True`), you'll see a few warnings about not having an admin user or host setup; these are normal. Don't worry — we'll do this in the next step. You only need to stop if you see a stacktrace about being unable to connect to the database.
+4. Launch the Shynet server for the first time by running `docker run --env-file=<your env file> ghcr.io/starkzarn/shynet:latest`. Provided you're using the default environment information (i.e., `PERFORM_CHECKS_AND_SETUP` is `True`), you'll see a few warnings about not having an admin user or host setup; these are normal. Don't worry — we'll do this in the next step. You only need to stop if you see a stacktrace about being unable to connect to the database.
 
-5. Create an admin user by running `docker run --env-file=<your env file> milesmcc/shynet:latest ./manage.py registeradmin <your email>`. A temporary password will be printed to the console.
+5. Create an admin user by running `docker run --env-file=<your env file> ghcr.io/starkzarn/shynet:latest ./manage.py registeradmin <your email>`. A temporary password will be printed to the console.
 
-6. Set the whitelabel of your Shynet instance by running `docker run --env-file=<your env file> milesmcc/shynet:latest ./manage.py whitelabel <whitelabel>`. While this setting doesn't affect any core operations of Shynet, it lets you rename Shynet to whatever you want. (Example whitelabels: `"My Shynet Instance"` or `"Acme Analytics"`.)
+6. Set the whitelabel of your Shynet instance by running `docker run --env-file=<your env file> ghcr.io/starkzarn/shynet:latest ./manage.py whitelabel <whitelabel>`. While this setting doesn't affect any core operations of Shynet, it lets you rename Shynet to whatever you want. (Example whitelabels: `"My Shynet Instance"` or `"Acme Analytics"`.)
 
-7. Launch your webserver by running `docker run --env-file=<your env file> milesmcc/shynet:latest`. You may need to bind Docker's port 8080 (where Shynet runs) to your local port 80 (http); this can be done using the flag `-p 80:8080` after `run`. Visit your service's homepage, and verify everything looks right! You should see a login prompt. Log in with the credentials from step 5. You'll probably be prompted to "confirm your email"—if you haven't set up an email server, the confirmation email will be printed to the console instead.
+7. Launch your webserver by running `docker run --env-file=<your env file> ghcr.io/starkzarn/shynet:latest`. You may need to bind Docker's port 8080 (where Shynet runs) to your local port 80 (http); this can be done using the flag `-p 80:8080` after `run`. Visit your service's homepage, and verify everything looks right! You should see a login prompt. Log in with the credentials from step 5. You'll probably be prompted to "confirm your email"—if you haven't set up an email server, the confirmation email will be printed to the console instead.
 
 8. Create a service by clicking "+ Create Service" in the top right hand corner. Fill out the options as appropriate. Once you're done, press "create" and you'll be redirected to your new service's analytics page.
 
@@ -170,7 +170,7 @@ Nginx is a self hosted, highly configurable webserver. Nginx can be configured t
 
 4. Restart your Docker image, but this time use `8080` as the local bind port, as that's where we configured Nginx to look
    * `cd ~/`
-   * `docker run -p 8080:8080 --env-file=<your env file> milesmcc/shynet:latest`
+   * `docker run -p 8080:8080 --env-file=<your env file> ghcr.io/starkzarn/shynet:latest`
 
 5. Finally, time to test!
    * Go to `http://<your site>/admin`
