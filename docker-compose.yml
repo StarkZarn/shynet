@@ -3,6 +3,10 @@ services:
     container_name: shynet_main
     image: ghcr.io/starkzarn/shynet:latest
     restart: unless-stopped
+    ### Uncomment the following if you would like to provide updated GeoLite databases
+    #volumes:
+    #  - /path/to/GeoLite2-City.mmdb:/etc/GeoLite2-City.mmdb
+    # - /path/to/GeoLite2-ASN.mmdb:/etc/GeoLite2-ASN.mmdb
     expose:
       - 8080
     env_file:
