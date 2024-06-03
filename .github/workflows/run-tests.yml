@@ -30,11 +30,12 @@ jobs:
           poetry-version: 1.8.2
       - name: preinstall wheel
         run: poetry run pip install "wheel" --no-build-isolation
-      - name: Preinstall dependencies (temporary )
+      - name: Preinstall dependencies (temporary)
         run: poetry run pip install "pyyaml~=6.0.1" --no-build-isolation
       - name: Install dependencies 
         run: poetry install
       - name: Django Testing project
         run: |
           cp TEMPLATE.env .env
+          export DJANGO_SETTINGS_MODULES=shynet.test_settings
           poetry run ./shynet/manage.py test
