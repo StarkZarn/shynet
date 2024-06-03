@@ -615,26 +615,26 @@ redis = "<4.0"
 
 [[package]]
 name = "django-stubs"
-version = "1.16.0"
+version = "5.0.2"
 description = "Mypy stubs for Django"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "django-stubs-1.16.0.tar.gz", hash = "sha256:1bd96207576cd220221a0e615f0259f13d453d515a80f576c1246e0fb547f561"},
-    {file = "django_stubs-1.16.0-py3-none-any.whl", hash = "sha256:c95f948e2bfc565f3147e969ff361ef033841a0b8a51cac974a6cc6d0486732c"},
+    {file = "django_stubs-5.0.2-py3-none-any.whl", hash = "sha256:cb0c506cb5c54c64612e4a2ee8d6b913c6178560ec168009fe847c09747c304b"},
+    {file = "django_stubs-5.0.2.tar.gz", hash = "sha256:236bc5606e5607cb968f92b648471f9edaa461a774bc013bf9e6bff8730f6bdf"},
 ]
 
 [package.dependencies]
+asgiref = "*"
 django = "*"
-django-stubs-ext = ">=0.8.0"
-mypy = ">=0.980"
-tomli = "*"
-types-pytz = "*"
+django-stubs-ext = ">=5.0.2"
 types-PyYAML = "*"
-typing-extensions = "*"
+typing-extensions = ">=4.11.0"
 
 [package.extras]
-compatible-mypy = ["mypy (>=1.1.1,<1.2)"]
+compatible-mypy = ["mypy (>=1.10.0,<1.11.0)"]
+oracle = ["oracledb"]
+redis = ["redis"]
 
 [[package]]
 name = "django-stubs-ext"
@@ -1501,28 +1501,6 @@ files = [
 tests = ["pytest", "pytest-cov"]
 
 [[package]]
-name = "tomli"
-version = "2.0.1"
-description = "A lil' TOML parser"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
-    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
-]
-
-[[package]]
-name = "types-pytz"
-version = "2024.1.0.20240417"
-description = "Typing stubs for pytz"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "types-pytz-2024.1.0.20240417.tar.gz", hash = "sha256:6810c8a1f68f21fdf0f4f374a432487c77645a0ac0b31de4bf4690cf21ad3981"},
-    {file = "types_pytz-2024.1.0.20240417-py3-none-any.whl", hash = "sha256:8335d443310e2db7b74e007414e74c4f53b67452c0cb0d228ca359ccfba59659"},
-]
-
-[[package]]
 name = "types-pyyaml"
 version = "6.0.12.20240311"
 description = "Typing stubs for PyYAML"
@@ -1739,4 +1717,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "e4c163e96c0a9b2f0f728c37b48fb947a830361a74146e93f7acb8e2929f3af6"
+content-hash = "0d8c8a3fa5f3906e752e05f21ac1b7c4516f73da6ba4ffa7c0606ba7f0170731"
