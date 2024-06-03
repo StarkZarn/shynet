@@ -39,6 +39,13 @@ services:
       - shynet
     networks:
       - internal
+  cache:
+    container_name: shynet_cache
+    image: redis:7-alpine
+    restart: always
+    networks:
+      - internal
+
 volumes:
   shynet_db:
 networks:
