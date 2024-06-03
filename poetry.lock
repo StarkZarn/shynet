@@ -601,19 +601,6 @@ files = [
 test = ["pytest"]
 
 [[package]]
-name = "django-redis-cache"
-version = "3.0.1"
-description = "Redis Cache Backend for Django"
-optional = false
-python-versions = "*"
-files = [
-    {file = "django-redis-cache-3.0.1.tar.gz", hash = "sha256:a7fbef101a053d2e430bd3befe6a87e6e730f98e335b516f25f30b17d9fe66e3"},
-]
-
-[package.dependencies]
-redis = "<4.0"
-
-[[package]]
 name = "django-stubs"
 version = "5.0.2"
 description = "Mypy stubs for Django"
@@ -671,13 +658,13 @@ doc = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
 
 [[package]]
 name = "faker"
-version = "25.3.0"
+version = "25.4.0"
 description = "Faker is a Python package that generates fake data for you."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "Faker-25.3.0-py3-none-any.whl", hash = "sha256:0158d47e955b6ec22134c0a74ebb7ed34fe600896208bafbf1008db831b17f04"},
-    {file = "Faker-25.3.0.tar.gz", hash = "sha256:bcbe31eee5ef4bbf87ce36c4eba53c01e2a1d912fde2a4d3528b430d2beb784f"},
+    {file = "Faker-25.4.0-py3-none-any.whl", hash = "sha256:c6c2a937c59f12ee9878434c6ad3d6eca5d429d50a9b7c5923d99aa1a7ba5fba"},
+    {file = "Faker-25.4.0.tar.gz", hash = "sha256:2baf32ca8a9e6870445f2248c99b210e5d0e5eadaba5936b407f6eb9d63cb96a"},
 ]
 
 [package.dependencies]
@@ -1401,17 +1388,18 @@ files = [
 
 [[package]]
 name = "redis"
-version = "3.5.3"
-description = "Python client for Redis key-value store"
+version = "5.0.4"
+description = "Python client for Redis database and key-value store"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+python-versions = ">=3.7"
 files = [
-    {file = "redis-3.5.3-py2.py3-none-any.whl", hash = "sha256:432b788c4530cfe16d8d943a09d40ca6c16149727e4afe8c2c9d5580c59d9f24"},
-    {file = "redis-3.5.3.tar.gz", hash = "sha256:0e7e0cfca8660dea8b7d5cd8c4f6c5e29e11f31158c0b0ae91a397f00e5a05a2"},
+    {file = "redis-5.0.4-py3-none-any.whl", hash = "sha256:7adc2835c7a9b5033b7ad8f8918d09b7344188228809c98df07af226d39dec91"},
+    {file = "redis-5.0.4.tar.gz", hash = "sha256:ec31f2ed9675cc54c21ba854cfe0462e6faf1d83c8ce5944709db8a4700b9c61"},
 ]
 
 [package.extras]
-hiredis = ["hiredis (>=0.1.3)"]
+hiredis = ["hiredis (>=1.0.0)"]
+ocsp = ["cryptography (>=36.0.1)", "pyopenssl (==20.0.1)", "requests (>=2.26.0)"]
 
 [[package]]
 name = "requests"
@@ -1717,4 +1705,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "0d8c8a3fa5f3906e752e05f21ac1b7c4516f73da6ba4ffa7c0606ba7f0170731"
+content-hash = "e816dd8079d2e01546b56d9eed71d7bae280751d929bc8c1350824e51c98c64c"

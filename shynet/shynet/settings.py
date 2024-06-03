@@ -230,10 +230,19 @@ STATICFILES_FINDERS = [
 ]
 
 # Redis
+#if not DEBUG and os.getenv("REDIS_CACHE_LOCATION") is not None:
+#    CACHES = {
+#        "default": {
+#            "BACKEND": "redis_cache.RedisCache",
+#            "LOCATION": os.getenv("REDIS_CACHE_LOCATION"),
+#            "KEY_PREFIX": "v1_",  # Increment when migrations occur
+#        }
+#    }
+
 if not DEBUG and os.getenv("REDIS_CACHE_LOCATION") is not None:
     CACHES = {
         "default": {
-            "BACKEND": "redis_cache.RedisCache",
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
             "LOCATION": os.getenv("REDIS_CACHE_LOCATION"),
             "KEY_PREFIX": "v1_",  # Increment when migrations occur
         }
