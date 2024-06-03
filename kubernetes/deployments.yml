@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: "shynet-webserver"
-        image: "milesmcc/shynet:edge" # Change to the version appropriate for you (e.g., :latest)
+        image: "starkzarn/shynet:latest" # Change to the version appropriate for you (e.g., :latest)
         imagePullPolicy: Always
         envFrom:
         - secretRef:
@@ -42,7 +42,7 @@ spec:
     spec:
       containers:
       - name: "shynet-celeryworker"
-        image: "milesmcc/shynet:edge" # Change to the version appropriate for you (e.g., :latest)
+        image: "starkzarn/shynet:latest" # Change to the version appropriate for you (e.g., :latest)
         command: ["./celeryworker.sh"]
         imagePullPolicy: Always
         envFrom:
