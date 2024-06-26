@@ -8,10 +8,15 @@
     <br>
     <strong><a href="#installation">Getting started »</a></strong>
   </p>
-  <p align="center"><a href="#screenshots">Screenshots</a> &bull; <a href="#features">Features</a> &bull; <a href="https://miles.land/officehours/">Office Hours</a></p>
+  <p align="center"><a href="#screenshots">Screenshots</a> &bull; <a href="#features">Features</a></p>
 </p>
 
 <br>
+
+## Differences from the Original
+This version of shynet was created due address a lack of security-related dependency updates in the original. Numerous dependencies were dated and had published vulnerabilities. This version seeks to address those issues. On top of that, version updates have been pushed that add small features, example documentation has changed, etc. The core functionality is absolutely exactly the same, but I'm looking to add some quality-of-life improvements, and ultimately security fixes because, after all, **this lives on the internet**.
+
+DISCLAIMER: I'm not a real software engineer and my changes might be too hacky for your taste. I'm just here to have a good time and keep things working. 😎
 
 ## Motivation
 
@@ -93,21 +98,13 @@ Shynet is pretty simple, but there are a few key terms you need to know in order
 
 ## Installation
 
-You can find instructions on getting started and usage in the [Usage Guide](GUIDE.md#installation). Out of the box, we support deploying via a simple Docker container, docker-compose, Heroku, or Kubernetes (see [kubernetes](/kubernetes)).
+You can find instructions on getting started and usage in the [Usage Guide](GUIDE.md#installation). Out of the box, we support deploying via a simple Docker container, docker-compose, or Kubernetes (see [kubernetes](/kubernetes)).
 
-## FAQ
-
-**Does Shynet respond to Do Not Track (DNT) signals?** Yes. While there isn't any standardized way to handle DNT requests, Shynet allows you to specify whether you want to collect any data from users with DNT enabled on a per-service basis. (By default, Shynet will _not_ collect any data from users who specify DNT.)
-
-**Is this GDPR compliant?** It depends on how you use it. If you're worried about GDPR, you should talk to a lawyer about your particular data collection practices. I'm not a lawyer. (And this isn't legal advice.)
 
 ## Troubleshooting
 
 Having trouble with Shynet? Check out the [troubleshooting guide](GUIDE.md#troubleshooting), or [create an issue](https://github.com/starkzarn/shynet/issues/new) if you think you found a bug in Shynet itself (or have a feature suggestion).
 
-## Roadmap
-
-To see the upcoming planned features, check out the repository's [roadmap project](https://github.com/starkzarn/shynet/projects/1). Upcoming features include data aggregation through rollups, anomaly detection, detailed data exports, two-factor authentication, and a data deletion tool.
 
 ## In the Wild
 
@@ -119,8 +116,8 @@ Are you interested in contributing to Shynet? Just send a pull request! Maybe on
 
 ## License
 
-Shynet is made available under the [Apache License, version 2.0](LICENSE).
+Shynet is made available under the [Apache License, version 2.0](LICENSE), with all addditions and modifications from this fork being licensed under [AGPL-3.0](LICENSE).
 
 ---
 
-Shynet was created by [Miles McCain](https://miles.land) ([@MilesMcCain](https://twitter.com/MilesMcCain)) at the [Recurse Center](https://recurse.com) using [a17t](https://a17t.miles.land).
+Shynet was created by [Miles McCain](https://miles.land) ([@MilesMcCain](https://twitter.com/MilesMcCain)) at the [Recurse Center](https://recurse.com) using [a17t](https://a17t.miles.land). This fork was updated and maintained by [StarkZarn](https://github.com/StarkZarn).
