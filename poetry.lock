@@ -512,6 +512,25 @@ socialaccount = ["pyjwt[crypto] (>=1.7)", "requests (>=2.0.0)", "requests-oauthl
 steam = ["python3-openid (>=3.0.8)"]
 
 [[package]]
+name = "django-axes"
+version = "6.5.0"
+description = "Keep track of failed login attempts in Django-powered sites."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "django_axes-6.5.0-py3-none-any.whl", hash = "sha256:bb4d602ef6ab823eb9c41f0957196986ee851756fa38566616f8512cba329661"},
+    {file = "django_axes-6.5.0.tar.gz", hash = "sha256:ee6b11b1331bb69a8fb90da9ecfac790ac95f5277ee04f16f55b4a5eb1593691"},
+]
+
+[package.dependencies]
+asgiref = ">=3.6.0"
+django = ">=3.2"
+django-ipware = {version = ">=3", optional = true, markers = "extra == \"ipware\""}
+
+[package.extras]
+ipware = ["django-ipware (>=3)"]
+
+[[package]]
 name = "django-cors-headers"
 version = "4.4.0"
 description = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
@@ -1720,4 +1739,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "fbd8b7783921a8d5a509f645c0807139b3ca0609413a4869d677a9cb47c41f6a"
+content-hash = "8a0725d6158b8fd28ae7c02169fac50a436678f81ab39d307ddcaec08c1ec265"

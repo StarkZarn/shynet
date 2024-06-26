@@ -27,6 +27,7 @@ django-cors-headers = "^4.0.0"
 packaging = "^24.0"
 django-allauth = "^0.63.3"
 psycopg = {extras = ["binary"], version = "^3.1.19"}
+django-axes = {extras = ["ipware"], version = "^6.5.0"}
 
 [tool.poetry.dev-dependencies]
 pytest-sugar = "^1.0.0"
