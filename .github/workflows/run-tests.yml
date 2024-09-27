@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       db:
-        image: postgres:16-alpine
+        image: postgres:17-alpine
         env:
           POSTGRES_USER: shynet_db_user
           POSTGRES_PASSWORD: shynet_db_user_password
