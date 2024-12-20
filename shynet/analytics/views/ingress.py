@@ -130,7 +130,7 @@ class ScriptView(ValidateServiceOriginsMixin, View):
         )
         heartbeat_frequency = settings.SCRIPT_HEARTBEAT_FREQUENCY
 
-        return render(
+        response = render(
             self.request,
             "analytics/scripts/page.js",
             context=dict(
@@ -144,6 +144,8 @@ class ScriptView(ValidateServiceOriginsMixin, View):
             ),
             content_type="application/javascript",
         )
+        response["Cache-Control"] = "public, max-age=36000" # 10 hours
+        return response
 
     def post(self, *args, **kwargs):
         payload = json.loads(self.request.body)
