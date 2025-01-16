@@ -29,7 +29,7 @@ django-allauth = "^64.0.0"
 psycopg = {extras = ["binary"], version = "^3.1.19"}
 django-axes = {extras = ["ipware"], version = "^7.0.0"}
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest-sugar = "^1.0.0"
 factory-boy = "^3.3.0"
 pytest-django = "^4.4.0"
