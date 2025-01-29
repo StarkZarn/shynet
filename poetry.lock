@@ -849,14 +849,14 @@ files = [
 
 [[package]]
 name = "geoip2"
-version = "4.8.1"
+version = "5.0.1"
 description = "MaxMind GeoIP2 API"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "geoip2-4.8.1-py3-none-any.whl", hash = "sha256:9317bd75d899d3d942face75a003e73d39006e7fc6c7f9c3db91ae28fbf6a464"},
-    {file = "geoip2-4.8.1.tar.gz", hash = "sha256:9aea2eab4b3e6252f47456528ae9c35b104c45277639c13fce1be87c92f84257"},
+    {file = "geoip2-5.0.1-py3-none-any.whl", hash = "sha256:128b7c9e6b55fb66178428a9400bd4f8b011cf64f147b1ed9e3a4766e61a9b78"},
+    {file = "geoip2-5.0.1.tar.gz", hash = "sha256:90af8b6d3687f3bef251f2708ad017b30d627d1144c0040eabc4c9017a807d86"},
 ]
 
 [package.dependencies]
@@ -1973,4 +1973,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "53a64ffbebccc6ad15ed8735975ee46c98a0a80b7b39b11b93d629ba30fca221"
+content-hash = "8b46643cdc2b7007c8efe50ace74e7e808bf2c087cc83621b2de6bbe7f5fdf26"
