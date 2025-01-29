@@ -11,7 +11,7 @@
     "self-host"
   ],
   "author": "StarkZarn",
-  "license": "Apache-2.0",
+  "license": "AGPLv3 and Apache-2.0",
   "bugs": {
     "url": "https://github.com/starkzarn/shynet/issues"
   },
