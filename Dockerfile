@@ -39,7 +39,7 @@ COPY package.json package-lock.json ../
 # Install more dependencies and cleanup build dependencies afterwards
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev libffi-dev && \
 	npm i -P --prefix .. && \
-	pip install "poetry~=1.8" && \
+	pip install poetry && \
 	poetry config virtualenvs.create false && \
 	poetry install --only main --no-interaction --no-ansi && \
 	apk --purge del .build-deps
