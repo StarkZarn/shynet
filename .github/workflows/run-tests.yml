@@ -17,7 +17,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.12]
+        python-version: [3.13]
 
     steps:
       - uses: actions/checkout@v4
@@ -26,12 +26,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Run image
         uses: abatilo/actions-poetry@v4.0.0
-        with:
-          poetry-version: 1.8.2
-      - name: preinstall wheel
-        run: poetry run pip install "wheel" --no-build-isolation
-      - name: Preinstall dependencies (temporary)
-        run: poetry run pip install "pyyaml~=6.0.1" --no-build-isolation
       - name: Install dependencies 
         run: poetry install
       - name: Django Testing project
