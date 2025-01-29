@@ -8,7 +8,7 @@ license = "Apache-2.0"
 [tool.poetry.dependencies]
 python = "^3.12"
 Django = "^5"
-geoip2 = "^4.8.0"
+geoip2 = "^5.0.1"
 whitenoise = "^6.0.0"
 celery = "^5.2.2"
 django-ipware = "^7.0.0"
