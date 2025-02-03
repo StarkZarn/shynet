@@ -30,8 +30,7 @@ def ingress(request, service_uuid, identifier, tracker, payload):
     user_agent = request.META.get("HTTP_USER_AGENT", "").strip()
     dnt = request.META.get("HTTP_DNT", "0").strip() == "1"
     gpc = request.META.get("HTTP_SEC_GPC", "0").strip() == "1"
-    if gpc or dnt:
-        dnt = True
+    
 
     ingress_request.delay(
         service_uuid,

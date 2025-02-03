@@ -55,14 +55,11 @@ def ingress_request(
     user_agent,
     dnt=False,
     identifier="",
+    fingerprint="",
 ):
     try:
         service = Service.objects.get(pk=service_uuid, status=Service.ACTIVE)
         log.debug(f"Linked to service {service}")
-
-        if dnt and service.respect_dnt:
-            log.debug("Ignoring because of DNT or GPC")
-            return
 
         try:
             remote_ip = ipaddress.ip_network(ip)
@@ -140,6 +137,7 @@ def ingress_request(
                 longitude=ip_data.get("longitude"),
                 latitude=ip_data.get("latitude"),
                 time_zone=ip_data.get("time_zone") or "",
+                fingerprint=fingerprint,
             )
             cache.set(
                 session_cache_path, session.pk, timeout=settings.SESSION_MEMORY_TIMEOUT
@@ -190,6 +188,7 @@ def ingress_request(
                 start_time=time,
                 last_seen=time,
                 service=service,
+                fingerprint=fingerprint,
             )
 
             # Recalculate whether the session is a bounce

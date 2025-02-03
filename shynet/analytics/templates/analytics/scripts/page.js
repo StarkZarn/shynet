@@ -5,6 +5,8 @@
 //
 // This script only sends the current URL, the referrer URL, and the page load time. That's it!
 
+// Include Thumbmark.js
+import Thumbmark from 'https://cdn.jsdelivr.net/npm/@thumbmarkjs/thumbmarkjs/dist/thumbmark.esm.js';
 
 var Shynet = {
 
@@ -13,34 +15,23 @@ var Shynet = {
   skipHeartbeat: false,
   sendHeartbeat: function () {
     try {
-      if (document.hidden || Shynet.skipHeartbeat) {
-        return;
-      }
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "{{heartbeat_url}}", true);
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-      Shynet.skipHeartbeat = true;
-      var xhr = new XMLHttpRequest();
-      xhr.open(
-        "POST",
-        "{{protocol}}://{{request.get_host}}{{endpoint}}",
-        true
-      );
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onload = function () {
-        Shynet.skipHeartbeat = false;
-      };
-      xhr.onerror = function () {
-        Shynet.skipHeartbeat = false;
-      };
-      xhr.send(
-        JSON.stringify({
-          idempotency: Shynet.idempotency,
-          referrer: document.referrer,
-          location: window.location.href,
-          loadTime:
-            window.performance.timing.domContentLoadedEventEnd -
-            window.performance.timing.navigationStart,
-        })
-      );
+      Thumbmark.getFingerprint().then(fingerprint => {
+        xhr.send(
+          JSON.stringify({
+            idempotency: Shynet.idempotency,
+            referrer: document.referrer,
+            location: window.location.href,
+            loadTime:
+              window.performance.timing.domContentLoadedEventEnd -
+              window.performance.timing.navigationStart,
+            fingerprint: fingerprint
+          })
+        );
+      });
     } catch (e) { }
   },
   newPageLoad: function () {

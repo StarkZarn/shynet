@@ -19,6 +19,7 @@ class SessionAdmin(admin.ModelAdmin):
         "ip",
         "asn",
         "country",
+        "fingerprint",
     )
     list_display_links = ("uuid",)
     search_fields = (
@@ -29,6 +30,7 @@ class SessionAdmin(admin.ModelAdmin):
         "identifier",
         "asn",
         "time_zone",
+        "fingerprint",
     )
     list_filter = ("device_type",)
     inlines = [HitInline]

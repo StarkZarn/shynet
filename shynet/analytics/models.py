@@ -33,6 +33,10 @@ class Session(models.Model):
 
     # Core request information
     user_agent = models.TextField(verbose_name=_("User agent"))
+
+    # Fingerprint data
+    fingerprint = models.TextField(blank=True, verbose_name=_("Fingerprint"))
+
     browser = models.TextField(verbose_name=_("Browser"))
     device = models.TextField(verbose_name=_("Device"))
     device_type = models.CharField(
