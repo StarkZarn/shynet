@@ -1,6 +1,6 @@
 [project]
 name = "shynet"
-version = "2025.1.0"
+version = "2025.4.0"
 description = "Modern, privacy-friendly, and cookie-free web analytics."
 authors = [
     {name = "StarkZarn"}
@@ -19,7 +19,7 @@ dependencies = [
     "gunicorn (>=23.0.0,<24.0.0)",
     "redis (>=5.2.1,<6.0.0)",
     "pycountry (>=24.6.1,<25.0.0)",
-    "html2text (>=2024.2.26,<2025.0.0)",
+    "html2text (>=2025.4.15,<2025.5.0)",
     "django-health-check (>=3.18.3,<4.0.0)",
     "django-npm (>=1.0.0,<2.0.0)",
     "python-dotenv (>=1.0.1,<2.0.0)",
