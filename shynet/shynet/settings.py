@@ -402,15 +402,25 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = ["GET", "OPTIONS"]
 
 # IPWare Precedence Options
-IPWARE_META_PRECEDENCE_ORDER = (
-    'HTTP_CF_CONNECTING_IP',
-    'HTTP_X_FORWARDED_FOR', 'X_FORWARDED_FOR', # client, proxy1, proxy2
-    'HTTP_CLIENT_IP',
-    'HTTP_X_REAL_IP',
-    'HTTP_X_FORWARDED',
-    'HTTP_X_CLUSTER_CLIENT_IP',
-    'HTTP_FORWARDED_FOR',
-    'HTTP_FORWARDED',
-    'HTTP_VIA',
-    'REMOTE_ADDR',
-)
+ IPWARE_META_PRECEDENCE_ORDER = (
+      "HTTP_CF_CONNECTING_IP",  # CloudFlare
+      "CF-CONNECTING-IP",  # CloudFlare
+      "X_FORWARDED_FOR",  # Load balancers or proxies such as AWS ELB (default client is `left-most` [`<client>, <proxy1>, <proxy2>`])
+      "HTTP_X_FORWARDED_FOR",  # Similar to X_FORWARDED_TO
+      "HTTP_CLIENT_IP",  # Standard headers used by providers such as Amazon EC2, Heroku etc.
+      "HTTP_X_REAL_IP",  # Standard headers used by providers such as Amazon EC2, Heroku etc.
+      "HTTP_X_FORWARDED",  # Squid and others
+      "HTTP_X_CLUSTER_CLIENT_IP",  # Rackspace LB and Riverbed Stingray
+      "HTTP_FORWARDED_FOR",  # RFC 7239
+      "HTTP_FORWARDED",  # RFC 7239
+      "X-CLIENT-IP",  # Microsoft Azure
+      "X-REAL-IP",  # NGINX
+      "X-CLUSTER-CLIENT-IP",  # Rackspace Cloud Load Balancers
+      "X_FORWARDED",  # Squid
+      "FORWARDED_FOR",  # RFC 7239
+      "TRUE-CLIENT-IP",  # CloudFlare Enterprise,
+      "FASTLY-CLIENT-IP",  # Firebase, Fastly
+      "FORWARDED",  # RFC 7239
+      "CLIENT-IP",  # Akamai and Cloudflare: True-Client-IP and Fastly: Fastly-Client-IP
+      "REMOTE_ADDR",  # Default
+  )
