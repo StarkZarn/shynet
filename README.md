@@ -18,6 +18,8 @@ This version of shynet was created due address a lack of security-related depend
 
 DISCLAIMER: I'm not a real software engineer and my changes might be too hacky for your taste. I'm just here to have a good time and keep things working. 😎
 
+[![Github All Releases](https://img.shields.io/github/downloads/starkzarn/shynet/total.svg)]()
+
 ## Motivation
 
 There are a _lot_ of web analytics tools. Unfortunately, most of them come with the following caveats:
