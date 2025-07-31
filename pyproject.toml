@@ -23,7 +23,7 @@ dependencies = [
     "django-health-check (>=3.18.3,<4.0.0)",
     "django-npm (>=1.0.0,<2.0.0)",
     "python-dotenv (>=1.0.1,<2.0.0)",
-    "django-debug-toolbar (>=6.0.0,<6.1.0)",
+    "django-debug-toolbar (>=5.0.1,<6.0.0)",
     "django-cors-headers (>=4.6.0,<5.0.0)",
     "packaging (>=25,<25.1)",
     "django-allauth (>=65.3.1,<66.0.0)",
@@ -44,8 +44,8 @@ pytest-sugar = "^1.0.0"
 factory-boy = "^3.3.1"
 pytest-django = "^4.9.0"
 django-coverage-plugin = "^3.1.1"
-django-stubs = "^5.2.2"
-mypy = "^1.17.0"
+django-stubs = "^5.2.1"
+mypy = "^1.16.1"
 
 [tool.black]
 line-length = 88
