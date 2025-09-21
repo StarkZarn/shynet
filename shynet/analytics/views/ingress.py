@@ -76,9 +76,9 @@ class ValidateServiceOriginsMixin:
             resp = super().dispatch(request, *args, **kwargs)
             resp["Access-Control-Allow-Origin"] = allow_origin
             resp["Access-Control-Allow-Methods"] = "GET,HEAD,OPTIONS,POST"
-            resp[
-                "Access-Control-Allow-Headers"
-            ] = "Origin, X-Requested-With, Content-Type, Accept, Authorization, Referer"
+            resp["Access-Control-Allow-Headers"] = (
+                "Origin, X-Requested-With, Content-Type, Accept, Authorization, Referer"
+            )
             return resp
         except Service.DoesNotExist:
             raise Http404()
@@ -139,12 +139,11 @@ class ScriptView(ValidateServiceOriginsMixin, View):
                     "protocol": protocol,
                     "heartbeat_frequency": heartbeat_frequency,
                     "script_inject": self.get_script_inject(),
-
                 }
             ),
             content_type="application/javascript",
         )
-        response["Cache-Control"] = "public, max-age=36000" # 10 hours
+        response["Cache-Control"] = "public, max-age=36000"  # 10 hours
         return response
 
     def post(self, *args, **kwargs):

@@ -5,20 +5,21 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('core', '0008_auto_20200628_1403'),
+        ("core", "0008_auto_20200628_1403"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='api_token',
+            model_name="user",
+            name="api_token",
             field=models.TextField(null=True, unique=True),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="user",
+            name="id",
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
     ]

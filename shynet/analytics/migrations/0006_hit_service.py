@@ -13,7 +13,6 @@ def add_service_to_hits(_a, _b):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("core", "0008_auto_20200628_1403"),
         ("analytics", "0005_auto_20210328_1518"),

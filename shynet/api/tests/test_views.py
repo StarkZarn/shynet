@@ -76,4 +76,3 @@ class TestDashboardApiView(TestCase):
         self.assertEqual(len(data["services"]), 1)
         self.assertEqual(data["services"][0]["uuid"], str(self.service_1.uuid))
         self.assertEqual(data["services"][0]["name"], str(self.service_1.name))
-

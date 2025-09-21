@@ -11,7 +11,6 @@ def update_bounce_stats(_a, _b):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("analytics", "0008_session_is_bounce"),
     ]

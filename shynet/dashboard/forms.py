@@ -94,9 +94,7 @@ class ServiceForm(forms.ModelForm):
 
     def clean_collaborators(self):
         collaborators = []
-        users_to_emails = (
-            {}
-        )  # maps users to the email they are listed under as a collaborator
+        users_to_emails = {}  # maps users to the email they are listed under as a collaborator
         for collaborator_email in self.cleaned_data["collaborators"].split(","):
             email = collaborator_email.strip()
             if email == "":

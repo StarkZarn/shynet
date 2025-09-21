@@ -39,7 +39,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "onlyusethisindev")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
-CSRF_TRUSTED_ORIGINS = filter(lambda k: len(k) > 0, os.getenv("CSRF_TRUSTED_ORIGINS", "").split(","))
+CSRF_TRUSTED_ORIGINS = filter(
+    lambda k: len(k) > 0, os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
+)
 
 # Application definition
 
@@ -219,8 +221,8 @@ TIME_ZONE = os.getenv("TIME_ZONE", "America/New_York")
 
 USE_I18N = True
 
-#REMOVE DEPRECATED SETTING
-#USE_L10N = True
+# REMOVE DEPRECATED SETTING
+# USE_L10N = True
 
 USE_TZ = True
 
@@ -237,7 +239,7 @@ STATICFILES_FINDERS = [
 ]
 
 # Redis
-#if not DEBUG and os.getenv("REDIS_CACHE_LOCATION") is not None:
+# if not DEBUG and os.getenv("REDIS_CACHE_LOCATION") is not None:
 #    CACHES = {
 #        "default": {
 #            "BACKEND": "redis_cache.RedisCache",
@@ -268,8 +270,8 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-ACCOUNT_LOGIN_METHODS = {'email'}
-ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
+ACCOUNT_LOGIN_METHODS = {"email"}
+ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"

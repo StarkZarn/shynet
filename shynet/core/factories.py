@@ -13,17 +13,14 @@ class UserFactory(DjangoModelFactory):
 
     @post_generation
     def password(self, create, extracted, **kwargs):
-        password = (
-            extracted
-            or factory.Faker(
-                "password",
-                length=42,
-                special_chars=True,
-                digits=True,
-                upper_case=True,
-                lower_case=True,
-            ).evaluate(None, None, extra={"locale": None})
-        )
+        password = extracted or factory.Faker(
+            "password",
+            length=42,
+            special_chars=True,
+            digits=True,
+            upper_case=True,
+            lower_case=True,
+        ).evaluate(None, None, extra={"locale": None})
 
         self.set_password(password)
 

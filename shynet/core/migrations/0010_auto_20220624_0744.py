@@ -8,82 +8,116 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('core', '0009_auto_20211117_0217'),
+        ("core", "0009_auto_20211117_0217"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='service',
-            options={'ordering': ['name', 'uuid'], 'verbose_name': 'Service', 'verbose_name_plural': 'Services'},
+            name="service",
+            options={
+                "ordering": ["name", "uuid"],
+                "verbose_name": "Service",
+                "verbose_name_plural": "Services",
+            },
         ),
         migrations.AlterField(
-            model_name='service',
-            name='collaborators',
-            field=models.ManyToManyField(blank=True, related_name='collaborating_services', to=settings.AUTH_USER_MODEL, verbose_name='Collaborators'),
+            model_name="service",
+            name="collaborators",
+            field=models.ManyToManyField(
+                blank=True,
+                related_name="collaborating_services",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="Collaborators",
+            ),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='collect_ips',
-            field=models.BooleanField(default=True, verbose_name='Collect ips'),
+            model_name="service",
+            name="collect_ips",
+            field=models.BooleanField(default=True, verbose_name="Collect ips"),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='created',
-            field=models.DateTimeField(auto_now_add=True, verbose_name='created'),
+            model_name="service",
+            name="created",
+            field=models.DateTimeField(auto_now_add=True, verbose_name="created"),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='hide_referrer_regex',
-            field=models.TextField(blank=True, default='', validators=[core.models._validate_regex], verbose_name='Hide referrer regex'),
+            model_name="service",
+            name="hide_referrer_regex",
+            field=models.TextField(
+                blank=True,
+                default="",
+                validators=[core.models._validate_regex],
+                verbose_name="Hide referrer regex",
+            ),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='ignore_robots',
-            field=models.BooleanField(default=False, verbose_name='Ignore robots'),
+            model_name="service",
+            name="ignore_robots",
+            field=models.BooleanField(default=False, verbose_name="Ignore robots"),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='ignored_ips',
-            field=models.TextField(blank=True, default='', validators=[core.models._validate_network_list], verbose_name='Igored ips'),
+            model_name="service",
+            name="ignored_ips",
+            field=models.TextField(
+                blank=True,
+                default="",
+                validators=[core.models._validate_network_list],
+                verbose_name="Igored ips",
+            ),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='link',
-            field=models.URLField(blank=True, verbose_name='link'),
+            model_name="service",
+            name="link",
+            field=models.URLField(blank=True, verbose_name="link"),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='name',
-            field=models.TextField(max_length=64, verbose_name='Name'),
+            model_name="service",
+            name="name",
+            field=models.TextField(max_length=64, verbose_name="Name"),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='origins',
-            field=models.TextField(default='*', verbose_name='origins'),
+            model_name="service",
+            name="origins",
+            field=models.TextField(default="*", verbose_name="origins"),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='owner',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='owning_services', to=settings.AUTH_USER_MODEL, verbose_name='Owner'),
+            model_name="service",
+            name="owner",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="owning_services",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="Owner",
+            ),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='respect_dnt',
-            field=models.BooleanField(default=True, verbose_name='Respect dnt'),
+            model_name="service",
+            name="respect_dnt",
+            field=models.BooleanField(default=True, verbose_name="Respect dnt"),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='script_inject',
-            field=models.TextField(blank=True, default='', verbose_name='Script inject'),
+            model_name="service",
+            name="script_inject",
+            field=models.TextField(
+                blank=True, default="", verbose_name="Script inject"
+            ),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='status',
-            field=models.CharField(choices=[('AC', 'Active'), ('AR', 'Archived')], db_index=True, default='AC', max_length=2, verbose_name='status'),
+            model_name="service",
+            name="status",
+            field=models.CharField(
+                choices=[("AC", "Active"), ("AR", "Archived")],
+                db_index=True,
+                default="AC",
+                max_length=2,
+                verbose_name="status",
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="user",
+            name="id",
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
     ]
