@@ -36,6 +36,15 @@ COPY uv.lock pyproject.toml ./
 COPY package.json bun.lock ../
 # Django expects node_modules to be in its parent directory.
 
+# Prep for multiarch bun install
+RUN if [[ $(uname -m) == "aarch64" ]] ; \
+    then \
+    # aarch64
+    wget https://raw.githubusercontent.com/squishyu/alpine-pkg-glibc-aarch64-bin/master/glibc-2.26-r1.apk ; \
+    apk add --no-cache --allow-untrusted --force-overwrite glibc-2.26-r1.apk ; \
+    rm glibc-2.26-r1.apk ; \
+    fi
+
 # Install more dependencies and cleanup build dependencies afterwards
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev libffi-dev && \
     npm i -g bun && \
