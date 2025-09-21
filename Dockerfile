@@ -33,7 +33,7 @@ RUN apk add --no-cache curl && \
 
 # Move dependency files
 COPY uv.lock pyproject.toml ./
-COPY package.json package-lock.json ../
+COPY package.json bun.lock ../
 # Django expects node_modules to be in its parent directory.
 
 # Install more dependencies and cleanup build dependencies afterwards
