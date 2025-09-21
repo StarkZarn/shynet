@@ -5,6 +5,7 @@ __pycache__/
 
 # JavaScript packages
 node_modules/
+.pnpm-store/
 
 # C extensions
 *.so
@@ -113,7 +114,7 @@ ENV/
 env.bak/
 venv.bak/
 Vagrantfile
-.vagrant 
+.vagrant
 ubuntu-xenial-16.04-cloudimg-console.log
 
 # Spyder project settings
