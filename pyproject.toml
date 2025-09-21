@@ -1,6 +1,6 @@
 [project]
 name = "shynet"
-version = "2025.4.0"
+version = "2025.9.0"
 description = "Modern, privacy-friendly, and cookie-free web analytics."
 authors = [
     {name = "StarkZarn"}
@@ -32,20 +32,15 @@ dependencies = [
 ]
 
 
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.poetry]
-package-mode = false
-
-[tool.poetry.group.dev.dependencies]
-pytest-sugar = "^1.0.0"
-factory-boy = "^3.3.1"
-pytest-django = "^4.9.0"
-django-coverage-plugin = "^3.1.1"
-django-stubs = "^5.2.2"
-mypy = "^1.17.0"
+[dependency-groups]
+dev = [
+    "pytest-sugar (>=1.0.0)",
+    "factory-boy (>=3.3.1)",
+    "pytest-django (>=4.9.0)",
+    "django-coverage-plugin (>=3.1.1)",
+    "django-stubs (>=5.2.2)",
+    "mypy (>=1.17.0)"
+]
 
 [tool.black]
 line-length = 88

@@ -1,4 +1,4 @@
-FROM python:3.13-alpine
+FROM ghcr.io/astral-sh/uv:python3.13-alpine
 
 # Getting things ready
 WORKDIR /usr/src/shynet
@@ -7,7 +7,7 @@ WORKDIR /usr/src/shynet
 ARG GF_UID="500"
 ARG GF_GID="500"
 RUN apk update && \
-	apk add --no-cache gettext bash npm postgresql-libs libffi-dev rust cargo
+    apk add --no-cache gettext bash npm postgresql-libs libffi-dev rust cargo
 
 # MaxMind scans GitHub for exposed license keys and deactivates them. This
 # (encoded) license key is intened to be public; it is not configured with any
@@ -25,35 +25,34 @@ RUN echo $MAXMIND_LICENSE_KEY_BASE64 > .mmdb_key
 COPY assets/GeoLite2-ASN_20191224.tar.gz GeoLite2-ASN.tar.gz
 COPY assets/GeoLite2-City_20191224.tar.gz GeoLite2-City.tar.gz
 RUN apk add --no-cache curl && \
-	tar -xvz -C /tmp < GeoLite2-ASN.tar.gz && \
-	tar -xvz -C /tmp < GeoLite2-City.tar.gz && \
-	mv /tmp/GeoLite2*/*.mmdb /etc && \
-	rm GeoLite2-ASN.tar.gz GeoLite2-City.tar.gz && \
-	apk --purge del curl
+    tar -xvz -C /tmp < GeoLite2-ASN.tar.gz && \
+    tar -xvz -C /tmp < GeoLite2-City.tar.gz && \
+    mv /tmp/GeoLite2*/*.mmdb /etc && \
+    rm GeoLite2-ASN.tar.gz GeoLite2-City.tar.gz && \
+    apk --purge del curl
 
 # Move dependency files
-COPY poetry.lock pyproject.toml ./
+COPY uv.lock pyproject.toml ./
 COPY package.json package-lock.json ../
 # Django expects node_modules to be in its parent directory.
 
 # Install more dependencies and cleanup build dependencies afterwards
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev libffi-dev && \
-	npm i -P --prefix .. && \
-	pip install poetry && \
-	poetry config virtualenvs.create false && \
-	poetry install --only main --no-interaction --no-ansi && \
-	apk --purge del .build-deps
+    npm i -g bun && \
+    bun install -p && \
+    uv sync --no-dev --compile-bytecode && \
+    apk --purge del .build-deps
 
 # Setup user group
 RUN addgroup --system -g $GF_GID appgroup && \
-	adduser appuser --system --uid $GF_UID -G appgroup && \
-	mkdir -p /var/local/shynet/db/ && \
-	chown -R appuser:appgroup /var/local/shynet
+    adduser appuser --system --uid $GF_UID -G appgroup && \
+    mkdir -p /var/local/shynet/db/ && \
+    chown -R appuser:appgroup /var/local/shynet
 
 # Install Shynet
 COPY shynet .
-RUN python manage.py collectstatic --noinput && \
-	python manage.py compilemessages
+RUN uv run manage.py collectstatic --noinput && \
+    uv run manage.py compilemessages
 
 # Launch
 USER appuser
