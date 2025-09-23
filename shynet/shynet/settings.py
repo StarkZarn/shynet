@@ -330,6 +330,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 NPM_ROOT_PATH = "../"
 
+NPM_EXECUTABLE_PATH = "/usr/bin/yarn"
+
 NPM_FILE_PATTERNS = {
     "a17t": [os.path.join("dist", "a17t.css"), os.path.join("dist", "tailwind.css")],
     "apexcharts": [os.path.join("dist", "apexcharts.min.js")],
