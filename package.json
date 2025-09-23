@@ -23,6 +23,7 @@
     "datamaps": "^0.5.9",
     "flag-icons": "^7.5.0",
     "inter-ui": "^4.1.1",
-    "litepicker": "^2.0.12"
+    "litepicker": "^2.0.12",
+    "topojson": "^3.0.2"
   }
 }

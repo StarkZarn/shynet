@@ -29,6 +29,9 @@ importers:
       litepicker:
         specifier: ^2.0.12
         version: 2.0.12
+      topojson:
+        specifier: ^3.0.2
+        version: 3.0.2
 
 packages:
 
@@ -180,6 +183,9 @@ packages:
 
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+
+  commander@2.20.3:
+    resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
 
   commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
@@ -648,8 +654,25 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
+  topojson-client@3.0.0:
+    resolution: {integrity: sha512-2phZ98wg/iKvsWxbB6JQcq0/N0f+sRx8ZogdvjCg+CjaJdmV0knP0OQwK5XbgnytAPx5lPZk41kiWpgH2w9FHg==}
+    hasBin: true
+
+  topojson-server@3.0.0:
+    resolution: {integrity: sha512-UhhwQk4e2+lwhAVYkja3J5nQHQmKwORDuIQPkMnFFZFcLqWKLQWI3u7fZWtNIXTElBjTYdBUL1kzi1+oS/qDQw==}
+    hasBin: true
+
+  topojson-simplify@3.0.2:
+    resolution: {integrity: sha512-gyYSVRt4jO/0RJXKZQPzTDQRWV+D/nOfiljNUv0HBXslFLtq3yxRHrl7jbrjdbda5Ytdr7M8BZUI4OxU7tnbRQ==}
+    hasBin: true
+
   topojson@1.6.27:
     resolution: {integrity: sha512-JLFtrhClUH/k/yvsiCXqcWcXaOfO3DgFvHnYb+gS2xlDbjbvkKh6YB1CPilmEV++tH33xw6wCxoYA5g6YLZw/Q==}
+    deprecated: Use topojson-client, topojson-server or topojson-simplify directly.
+    hasBin: true
+
+  topojson@3.0.2:
+    resolution: {integrity: sha512-u3zeuL6WEVL0dmsRn7uHZKc4Ao4gpW3sORUv+N3ezLTvY3JdCuyg0hvpWiIfFw8p/JwVN++SvAsFgcFEeR15rQ==}
     deprecated: Use topojson-client, topojson-server or topojson-simplify directly.
     hasBin: true
 
@@ -845,6 +868,8 @@ snapshots:
       color-name: 1.1.4
 
   color-name@1.1.4: {}
+
+  commander@2.20.3: {}
 
   commander@4.1.1: {}
 
@@ -1315,6 +1340,19 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
+  topojson-client@3.0.0:
+    dependencies:
+      commander: 2.20.3
+
+  topojson-server@3.0.0:
+    dependencies:
+      commander: 2.20.3
+
+  topojson-simplify@3.0.2:
+    dependencies:
+      commander: 2.20.3
+      topojson-client: 3.0.0
+
   topojson@1.6.27:
     dependencies:
       d3: 3.5.17
@@ -1323,6 +1361,12 @@ snapshots:
       optimist: 0.3.7
       rw: 1.3.3
       shapefile: 0.3.1
+
+  topojson@3.0.2:
+    dependencies:
+      topojson-client: 3.0.0
+      topojson-server: 3.0.0
+      topojson-simplify: 3.0.2
 
   ts-interface-checker@0.1.13: {}
 
