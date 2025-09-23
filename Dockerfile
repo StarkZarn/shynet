@@ -2,6 +2,8 @@ FROM ghcr.io/astral-sh/uv:python3.13-alpine
 
 # Getting things ready
 WORKDIR /usr/src/shynet
+ENV UV_PROJECT_ENVIRONMENT=/usr/local
+ENV UV_SYSTEM_PYTHON=1
 
 # Install dependencies & configure machine
 ARG GF_UID="500"
@@ -51,8 +53,8 @@ RUN addgroup --system -g $GF_GID appgroup && \
 
 # Install Shynet
 COPY shynet .
-RUN uv run manage.py collectstatic --noinput && \
-    uv run manage.py compilemessages
+RUN ./manage.py collectstatic --noinput && \
+    ./manage.py compilemessages
 
 # Launch
 USER appuser
