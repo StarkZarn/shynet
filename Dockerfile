@@ -9,7 +9,7 @@ ENV UV_SYSTEM_PYTHON=1
 ARG GF_UID="500"
 ARG GF_GID="500"
 RUN apk update && \
-    apk add --no-cache gettext bash npm postgresql-libs libffi-dev rust cargo
+    apk add --no-cache gettext bash pnpm postgresql-libs libffi-dev rust cargo
 
 # MaxMind scans GitHub for exposed license keys and deactivates them. This
 # (encoded) license key is intened to be public; it is not configured with any
@@ -40,7 +40,6 @@ COPY package.json pnpm-lock.yaml ../
 
 # Install more dependencies and cleanup build dependencies afterwards
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev libffi-dev && \
-    npm i -g pnpm && \
     pnpm install -P && \
     uv sync --no-dev --compile-bytecode && \
     apk --purge del .build-deps
