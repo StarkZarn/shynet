@@ -349,7 +349,7 @@ NPM_FILE_PATTERNS = {
     "@fortawesome": [os.path.join("fontawesome-free", "js", "all.min.js")],
     "datamaps": [os.path.join("dist", "datamaps.world.min.js")],
     "d3": ["d3.min.js"],
-    "topojson": [os.path.join("build", "topojson.min.js")],
+    "topojson": [os.path.join("dist", "topojson.min.js")],
     "flag-icons": [
         os.path.join("css", "flag-icons.min.css"),
         os.path.join("flags", "*"),
