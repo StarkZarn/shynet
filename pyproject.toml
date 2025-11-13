@@ -8,7 +8,7 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "django (>=5.1.5,<6.0.0)",
+    "django>=5.1.5,<6.0.0",
     "geoip2 (>=5.0.1,<6.0.0)",
     "whitenoise (>=6.8.2,<7.0.0)",
     "celery (>=5.4.0,<6.0.0)",
@@ -23,12 +23,12 @@ dependencies = [
     "django-health-check (>=3.18.3,<4.0.0)",
     "django-npm (>=1.0.0,<2.0.0)",
     "python-dotenv (>=1.0.1,<2.0.0)",
-    "django-debug-toolbar (>=6.0.0,<6.1.0)",
     "django-cors-headers (>=4.6.0,<5.0.0)",
     "packaging (>=25,<25.1)",
     "django-allauth (>=65.3.1,<66.0.0)",
     "psycopg[binary] (>=3.2.4,<4.0.0)",
-    "django-axes[ipware] (>=8.0.0,<8.1.0)"
+    "django-axes[ipware] (>=8.0.0,<8.1.0)",
+    "django-debug-toolbar>=6.1.0",
 ]
 
 
@@ -39,7 +39,8 @@ dev = [
     "pytest-django (>=4.9.0)",
     "django-coverage-plugin (>=3.1.1)",
     "django-stubs (>=5.2.2)",
-    "mypy (>=1.17.0)"
+    "mypy (>=1.17.0)",
+    "django-debug-toolbar>=6.0.0",
 ]
 
 [tool.black]

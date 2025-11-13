@@ -1,4 +1,4 @@
-FROM ghcr.io/astral-sh/uv:python3.13-alpine
+FROM ghcr.io/astral-sh/uv:python3.14-alpine
 
 # Getting things ready
 WORKDIR /usr/src/shynet

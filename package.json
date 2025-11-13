@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/starkzarn/shynet#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.1",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "a17t": "^0.10.1",
-    "apexcharts": "^5.3.5",
+    "apexcharts": "^5.3.6",
     "datamaps": "^0.5.9",
     "flag-icons": "^7.5.0",
     "inter-ui": "^4.1.1",
