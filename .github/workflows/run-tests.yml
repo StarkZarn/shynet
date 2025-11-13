@@ -17,20 +17,19 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.13]
+        python-version: [3.14]
 
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v7
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Run image
-        uses: abatilo/actions-poetry@v4.0.0
       - name: Install dependencies 
-        run: poetry install
+        run: uv install
       - name: Django Testing project
         env: 
           DJANGO_SETTINGS_MODULES: shynet.test_settings
         run: |
           cp TEMPLATE.env .env
-          DJANGO_SETTINGS_MODULES=shynet.test_settings poetry run ./shynet/manage.py test
+          DJANGO_SETTINGS_MODULES=shynet.test_settings uv run ./shynet/manage.py test
