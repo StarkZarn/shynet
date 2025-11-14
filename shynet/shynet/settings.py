@@ -330,7 +330,7 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
     EMAIL_USE_SSL = os.environ.get("EMAIL_USE_SSL")
     EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
-s
+
 # Auto fields
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
