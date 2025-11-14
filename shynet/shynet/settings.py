@@ -39,11 +39,10 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "onlyusethisindev")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
-CSRF_TRUSTED_ORIGINS = filter(
-    lambda k: len(k) > 0, os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
-)
 
- os.getenv("CORS_ALLOWED_ORIGINS", "[*]")
+CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', '*').split(',')
+
+CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', '*').split(',')
 
 # Application definition
 
