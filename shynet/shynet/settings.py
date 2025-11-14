@@ -43,7 +43,7 @@ CSRF_TRUSTED_ORIGINS = filter(
     lambda k: len(k) > 0, os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
 )
 
-CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "[*]")
+ os.getenv("CORS_ALLOWED_ORIGINS", "[*]")
 
 # Application definition
 
