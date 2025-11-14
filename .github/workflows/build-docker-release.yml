@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - csrf-bug
+      - master
     tags-ignore:
       - v*
   #pull_request:
@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          tags: ghcr.io/starkzarn/shynet:bugfix
+          tags: ghcr.io/starkzarn/shynet:master,ghcr.io/starkzarn/shynet:latest
           push: true
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
