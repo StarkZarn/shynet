@@ -40,7 +40,11 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
-CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', '*').split(',')
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
+    if origin.strip()
+]
 
 CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'null').split(',')
 
@@ -74,11 +78,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    # `corsheaders` must be high in the stack so it can add CORS headers early.
     "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # Session middleware must come before CsrfViewMiddleware so CSRF can access
+    # request.session / cookies reliably.
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.sites.middleware.CurrentSiteMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -405,6 +412,12 @@ USE_RELATIVE_MAX_IN_BAR_VISUALIZATION = (
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = ["GET", "OPTIONS"]
 
+# When running behind a reverse proxy (Traefik / Nginx) ensure Django
+# knows the original protocol. Traefik should forward `X-Forwarded-Proto`.
+# This helps Origin checks performed by the CSRF middleware.
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 # IPWare Precedence Options
 IPWARE_META_PRECEDENCE_ORDER = (
     "HTTP_CF_CONNECTING_IP",  # CloudFlare
@@ -428,3 +441,4 @@ IPWARE_META_PRECEDENCE_ORDER = (
     "CLIENT-IP",  # Akamai and Cloudflare: True-Client-IP and Fastly: Fastly-Client-IP
     "REMOTE_ADDR",  # Default
 )
+
