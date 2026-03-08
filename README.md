@@ -1,4 +1,6 @@
+# <b>This project will no longer be updated. I will leave the archive for some time while I complete my migration away from GitHub, then it will be deleted.</b>
 
+<br /><br /><br /><br />
 <p align="center">
   <img align="center" src="images/logo.png" height="50" alt="Shynet logo">
   <br>
